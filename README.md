@@ -1,150 +1,67 @@
 # Phase 2 Code Challenge: Plantsy
 
-## Demo
+### Author : Shaline Chepkoech November 9th 2024
+****
+## Project Description
+Welcome to Plantsy! This is the admin side of a plant store management app. The project includes various functionalities that allow administrators to view, add, and manage plant listings. While designers have provided the components and styles, it’s up to me to implement the logic that makes Plantsy functional, interactive, and persistent with backend data.
+******
+## Project Overview
+Plantsy allows users to:
 
-Use this gif as an example of how the app should work.
+View all plants available in the store.
+Add new plants to the inventory.
+Mark plants as "sold out" to update their availability.
+Search for plants by name to display a filtered list.
+The app's primary goal is to facilitate easy management of plant listings and inventory through intuitive and straightforward functionality.
 
-![Demo GIF](https://curriculum-content.s3.amazonaws.com/phase-2/react-hooks-mock-code-challenge-plantshop/plantsy_demo.gif)
+********
+## SetUp Instruction
+### Requirements
+* [css](Framework URL)
+* Text editor eg [Visual Studio Code](https://code.visualstudio.com/download)
 
-## Instructions
 
-Welcome to Plantsy! You've been tasked with building out some features for the
-admin side of a plant store. The designers have put together the components and
-CSS. Now it's up to you to bring the features to life by adding stateful logic
-as well as persisting data to the backend via our API.
+### Getting Files
+* Fork the repo
+>  Clone repository
+- Create a new branch in your terminal (git checkout -b improve-feature)
+- Install Dependencies:[npm install]
+-Run the Backend Server: [npm run server]
+* Open the folder location on terminal and use the following command to run app:[npm start]
+- Make appropriate changes in file(s)
+- Add the changes and commit them (git commit -am "Improve App")
+- Push to the branch (git push origin improve-app)
+- Create a Pull request
 
-Your job will be to make our app work according to the user stories you will
-find the [Core Deliverables](#Core-Deliverables) section.
+### Endpoints
+The backend API runs on http://localhost:6001. The app uses the following endpoint(s):
+>GET /plants: Retrieves a list of all plants.
+>POST /plants: Adds a new plant to the backend.
+>PATCH /plants/
+: Updates an existing plant (e.g., to mark as "sold out").
 
-## Setup
+### Core Features
+The app implements the following core features according to user stories:
 
-1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `6001`.
-3. In a new terminal, run `npm start`.
+View All Plants: Upon starting the app, all available plants are displayed on the main page.
+Add New Plant: Users can submit a form to add a new plant. The plant will be added both on the frontend and persisted in the backend.
+Mark Plant as Sold Out: Users can mark a plant as "sold out," updating its availability status.
+Search Plants by Name: Users can search for plants by name, and the app displays a filtered list of matching plants.
 
-Make sure to open [http://localhost:6001/plants](http://localhost:6001/plants)
-in the browser to verify that your backend is working before you proceed!
+## Dependencies
+- Google fonts
+- Font awesome Icons
+- Particles JS
+*****
+## Technologies Used
+1. React
+2. CSS
+3. JavaScript
+*****
+## Contact Information
+* Email : chepkoechshaline726@gmail.com
+*****
+## [License](LICENSE)
+MIT License
+Copyright (c) 2024 shaline Chepkoech
 
-## Endpoints
-
-The base URL for your backend is: `http://localhost:6001`
-
-## Core Deliverables
-
-As a user:
-
-1. When the app starts, I can see all plants.
-2. I can add a new plant to the page by submitting the form.
-3. I can mark a plant as "sold out".
-4. I can search for plants by their name and see a filtered list of plants.
-
-### Endpoints for Core Deliverables
-
-#### GET /plants
-
-Example Response:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Aloe",
-    "image": "./images/aloe.jpg",
-    "price": 15.99
-  },
-  {
-    "id": 2,
-    "name": "ZZ Plant",
-    "image": "./images/zz-plant.jpg",
-    "price": 25.98
-  }
-]
-```
-
-#### POST `/plants`
-
-Required Headers:
-
-```js
-{
-  "Content-Type": "application/json"
-}
-```
-
-Request Object:
-
-```json
-{
-  "name": "string",
-  "image": "string",
-  "price": number
-}
-```
-
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 15.99
-}
-```
-
-## Advanced Deliverables
-
-These deliverables are not required to pass the code challenge, but if you have
-the extra time, or even after the code challenge, they are a great way to
-stretch your skills.
-
-You'll have to add additional elements for these features. Feel free to style
-them however you see fit!
-
-> Note: If you are going to attempt these advanced deliverables, please be sure
-> to have a working commit with all the Core Deliverables first!
-
-As a user:
-
-1. I can update the price of a plant and still see the updated price after
-   refreshing the page.
-2. I can delete a plant and it is still gone when I refresh the page.
-
-### Endpoints for Advanced Deliverables
-
-#### PATCH /plants/:id
-
-Required Headers:
-
-```js
-{
-  "Content-Type": "application/json"
-}
-```
-
-Request Object:
-
-```json
-{
-  "price": number
-}
-```
-
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 16.99
-}
-```
-
-#### DELETE /plants/:id
-
-Example Response:
-
-```json
-{}
-```
