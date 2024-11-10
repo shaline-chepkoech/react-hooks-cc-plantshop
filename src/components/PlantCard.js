@@ -1,25 +1,3 @@
-/*import React, { useState } from "react";
-import DeletePlant from "./DeletePlant";
-
-function PlantCard({ name, image, price, onDeletePlant}) {
-  const [isInStock, setIsInStock] = useState(true);
-  const handleStockToggle = () => {
-    setIsInStock((prevStock) => !prevStock);
-  };
-  return (
-    <li className="card" data-testid="plant-item">
-      <img src={image || "https://via.placeholder.com/400"} alt={name} />
-      <h4>{name}</h4>
-      <p>Price: ${price}</p>
-      {isInStock ? (
-        <button className="primary"onClick={handleStockToggle} >In Stock</button>
-      ) : (
-        <button onClick={handleStockToggle}>Out of Stock</button>
-      )}
-    </li>
-  );
-}
-export default PlantCard;*/
 import React, { useState } from "react";
 import DeletePlant from "./DeletePlant";
 import UpdatePrice from "./UpdatePrice";

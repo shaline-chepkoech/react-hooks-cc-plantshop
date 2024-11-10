@@ -41,12 +41,6 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
-    },
-    {
-      "name": "bbb",
-      "image": "https://i.natgeofe.com/k/23e409f9-4699-46f0-a645-5cc1f5040363/pig-full-body_2x1.jpg",
-      "price": "8",
-      "id": 8
     }
   ]
 }

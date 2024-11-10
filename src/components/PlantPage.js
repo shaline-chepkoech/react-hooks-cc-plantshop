@@ -4,17 +4,9 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
-  const [plants, setPlants] = useState([]); // State for storing plant data
-  const [searchQuery, setSearchQuery] = useState(""); // State for storing search query
+  const [plants, setPlants] = useState([]); 
+  const [searchQuery, setSearchQuery] = useState(""); 
 
-  // Function to add a new plant
-  /*const addPlant = (newPlant) => {
-    console.log("Adding plant:", newPlant);
-    setPlants((prevPlantList) => [...prevPlantList, newPlant]);
-    console.log("Updated plants list:", updatedList);
-    return updatedList;
-  
-  };*/
   // Fetch plants from the backend
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -28,6 +20,18 @@ function PlantPage() {
       console.log("Updated plants list:", updatedList);
       return updatedList;
     });
+  };
+
+  const handleUpdatePrice = (plantId, updatedPrice) => {
+    setPlants((prevPlants) =>
+      prevPlants.map((plant) =>
+        plant.id === plantId ? { ...plant, price: updatedPrice } : plant
+      )
+    );
+  };
+  
+  const handleDeletePlant = (plantId) => {
+    setPlants((prevPlants) => prevPlants.filter((plant) => plant.id !== plantId));
   };
 
   // Function to handle search input
@@ -45,7 +49,10 @@ function PlantPage() {
     <main>
       <NewPlantForm onAddPlant={addPlant} />
       <Search onSearchChange={handleSearchChange} />
-      <PlantList plants={filteredPlants}/>
+      <PlantList
+        plants={filteredPlants}
+        onDeletePlant={handleDeletePlant}
+         onUpdatePrice={handleUpdatePrice}/>
     </main>
   );
 }
