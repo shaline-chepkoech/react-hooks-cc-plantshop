@@ -11,6 +11,8 @@ Plantsy allows users to:
 View all plants available in the store.
 Add new plants to the inventory.
 Mark plants as "sold out" to update their availability.
+Delete Plants.
+Update plant prices.
 Search for plants by name to display a filtered list.
 The app's primary goal is to facilitate easy management of plant listings and inventory through intuitive and straightforward functionality.
 
